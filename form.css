@@ -10,7 +10,7 @@
 .modal-confirm{
     background: #4444446b;
     width: auto;
-    height: 800px;
+    height: 100%;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -18,6 +18,7 @@
     right: 0;
     margin: auto;
     display: none;
+    
 }
 
 .modal-tab{
@@ -33,6 +34,19 @@
     border-radius:15px;
 
 }
+
+.modal-close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.jumbotron{
+    position: relative;
+}
+
+
 /* media queries */
 @media (max-width: 1024px){
     .form-wrapper{

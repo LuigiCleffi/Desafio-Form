@@ -14,25 +14,28 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="https://www.microserviceit.com.br/">
-            <img class="ml-sm-3" style="margin-left: 50px"
+            <img class="ml-sm-3" style="margin-left: 35%; display: flex;"
                 src="https://www.microserviceit.com.br/wp-content/uploads/2021/08/cropped-Camada-236.png" />
         </a>
 
         <div class="collapse navbar-collapse navbar-nav ml-auto" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/index.html">Home</a>
+                    <a class="nav-link" href="/index.html" style="margin-left: 230%;">Home</a>
                 </li>
             </ul>
         </div>
     </nav>
+
+    
     <div class="form-wrapper"></div>
     <div class="container mt-5 blur-it">
-        
-        <form action="" method="get" id="user_form" onsubmit="holdValues()">
+<!-- form  -->
+        <form action="" method="post" id="user_form" name="myform" required>
             <div class="row">
                 <div class="form-inline" action="script.js" method="get">
                     <div class="input-group">
+                        <!-- filds -->
                         <div class="form-group col-md-6">
                             <label for="email">Endereço de Email</label>
                             <input type="email" class="form-control" id="email" aria-describedby="email"
@@ -44,18 +47,18 @@
                         </div>
                         <div class="form-group" style="margin-left: 30px;">
                             <label for="name">Nome: </label>
-                            <input type="name" class="form-control" id="name" placeholder="Nome" required />
+                            <input type="name" class="form-control" name="name" id="name" placeholder="Nome" required />
                         </div>
                     </div>
                     <div class="form-inline">
                         <div class="input-group">
                             <div class="form-group col-md-6">
-                                <label for="cpf" name="cpf" id="cpf">CPF: </label>
-                                <input type="number" name="cpf" id="cpf" class="form-control"
-                                    placeholder="xxx.yyy.yxy-xy" required />
+                                <label for="cpf" name="cpf">CPF: </label>
+                                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="xxxyyyyxyxy"
+                                    required />
                             </div>
                             <div class="form-group" style="margin-left: 30px;">
-                                <label for="nascimento" name="nascimento" id="nascimento">Data de nascimento:
+                                <label for="nascimento" name="nascimento">Data de nascimento:
                                 </label>
                                 <input type="date" name="nascimento" class="form-control" id="nascimento" required />
                             </div>
@@ -67,7 +70,7 @@
                             <div class="form-group">
                                 <label for="cep">CEP: </label>
 
-                                <input type="number" name="cep" id="cep" class="form-control input-sm" min="8"
+                                <input type="text" name="cep" id="cep" class="form-control input-sm" min="8"
                                     style="width: auto;" required />
 
 
@@ -75,13 +78,13 @@
 
                             </div>
                             <div class="form-group " style="margin-left: 30px; width: 220px;">
-                                <label for="numero" name="numero">Número: </label>
-                                <input type="text" name="nuemro" id="numero" class="form-control col-md-4" />
+                                <label for="numero">Número: </label>
+                                <input type="text" name="nuemero" id="numero" class="form-control col-md-4"  required/>
                             </div>
                             <div class="form-group" style="margin-left: 30px;">
-                                <label for="uf" name="uf">Estado </label>
+                                <label for="uf">Estado </label>
                                 <input type="text" name="uf" id="uf" class="form-control col-md-4"
-                                    disabled="disabled" />
+                                    disabled="disabled" required/>
                             </div>
                         </div>
                     </div>
@@ -91,16 +94,16 @@
                                 <label for="logradouro" name="logradouro">Logradouro
                                 </label>
                                 <input type="text" name="logradouro" id="logradouro" class="form-control"
-                                    disabled="disabled" />
+                                    disabled="disabled" required/>
                             </div>
                             <div class="form-group " style="margin-left: 30px; width: 220px;">
                                 <label for="localidade" name="localidade">Cidade </label>
                                 <input type="text" name="localidade" id="localidade" class="form-control col-md-4"
-                                    disabled="disabled" />
+                                    disabled="disabled" required/>
                             </div>
                             <div class="form-group" style="margin-left: 30px;">
                                 <label for="bairro" name="bairro">Bairro </label>
-                                <input type="text" name="bairro" id="bairro" class="form-control" disabled="disabled" />
+                                <input type="text" name="bairro" id="bairro" class="form-control" disabled="disabled" required/>
                             </div>
 
                         </div>
@@ -113,79 +116,66 @@
                         <input type="complemento" name="complemento" id="complemento" placeholder="opcional"
                             class="form-control" />
                     </div>
+                    <!-- end fields -->
 
 
 
-
+<!-- button  -->
 
                     <div class="form-group form-check col-md-4 mt-4">
-                        <input type="checkbox" class="form-check-input" id="checkbox" />
+                        <input type="checkbox" class="form-check-input" id="checkbox"  required/>
                         <label class="form-check-label" for="termos">Concordo</label><br />
                         <small id="emailHelp" class="form-text text-muted" style="width: 20%">
                             Ao clicar em concordo, você estará afirmando que está de acordo com
                             nossos termos de serviço
                         </small>
                     </div>
-                   
-                    
-                        <input type="submit" id="submit" value="Enviar"class="btn btn-primary mt-3 mb-3"
-                            style="width: 10%;" />
-                            
-                        
-                   
+
+
+                    <button type="submit" id="submit" onclick="return false"
+                        class="btn btn-primary mt-3 mb-3 modal-btn">Enviar</button>
+                        <input type="reset" class="btn btn-outline-danger mt-3 mb-3 modal-btn"name="Limpar" value="Limpar" />
+
+<!-- End Button -->
+
                 </div>
             </div>
     </div>
 
+    <!-- Modal -->
     <div class="modal-confirm">
 
         <div class="modal-tab">
             <div class="jumbotron mt-5" style="margin: 0 60px;">
                 <h1 class="h1">Confirme os seus dados abaixo: </h1>
                 <div id="formResult md-6">
-                    <table class="table" aria-label="formResult">
-                        <thead>
-                            <tr id="valores">
-                                <th id="nome">Nome</th>
-                                <th id="email">Email</th>
-                                <th id="cpf">CPF</th>
-                                <th id="nascimento">Data de Nascimento</th>
-                                <th id="cep">Cep</th>
-                                <th id="cidade">Cidade</th>
-                                <th id="bairro">Bairro</th>
-                                <th id="cep">Logradouro</th>
-                                <th id="estado">Estado</th>
-                                <th id="numero">Numero</th>
-                            </tr>
-                            
-                        </thead>
-                        
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </table>
+                    <h5 class="h5">Nome: <span id="nameTb"></span></h5>
+                    <h5 class="h5">Email: <span id="emailTb"></span></h5>
+                    <h5 class="h5">CPF: <span id="cpfTb"></span></h5>
+                    <h5 class="h5">Data de Nascimento: <span id="nascimentoTb"></span></h5>
+                    <h5 class="h5">CEP: <span id="cepTb"></span></h5>
+                    <h5 class="h5">Cidade: <span id="cidadeTb"></span></h5>
+                    <h5 class="h5">Bairro: <span id="bairroTb"></span></h5>
+                    <h5 class="h5">Logradouro: <span id="logradouroTb"></span></h5>
+                    <h5 class="h5">Estado: <span id="estadoTb"></span></h5>
+                    <h5 class="h5">Numero: <span id="numeroTb"></span></h5>
+    <!-- End Modal -->
+
+
+
+
                 </div>
-    
-    
-                <a href=""><button type="submit" id="submit" class="btn btn-primary mt-3 mb-3 submit-btn"
+
+<!-- Button1 -->
+                <a href=""><button type="submit" id="submit" class="btn btn-outline-success mt-3 mb-3 submit-btn"
                         style="width: 10%;">
                         Enviar
                     </button></a>
-                <a href="index.html"><button type="submit" id="submit" class="btn btn-outline-danger mt-3 mb-3 ml-3"
-                        style="width: 10%;">
-                        Cancelar
-                    </button></a>
-    
-    
+                    <input type="button" class="btn btn-outline-danger mt-3 mb-3 modal-btn" name="cancel" value="Cancelar"
+                    onclick="window.location='form.html'" />
+<!-- End Button1 -->
+
+
             </div>
         </div>
 
@@ -197,7 +187,8 @@
 
 
     </form>
-</div>
+    <!-- end form -->
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
